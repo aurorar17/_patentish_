@@ -2,6 +2,15 @@
 __pycache__/
 *.py[cod]
 *$py.class
+*.pyc
+
+#file di log
+*.log
+
+# File di configurazione locali
+*.env
+*.local
+*.json
 
 # C extensions
 *.so
@@ -135,6 +144,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+*.env
 
 # Spyder project settings
 .spyderproject
@@ -169,3 +179,44 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# File di database
+*.sqlite3
+
+# Node modules 
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build di React
+build/
+dist/
+
+# File temporanei
+.DS_Store
+Thumbs.db
+
+# File di cache
+.cache/
+*.cache
+
+# Altri file o cartelle da ignorare
+*.egg-info/
+*.egg
+*.manifest
+*.spec
+
+
+# Configurazioni di IDE
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Altri file sensibili
+*.pem
+*.key
+*.crt
+
+# Ignora il file di configurazione delle impostazioni
+# settings.py
