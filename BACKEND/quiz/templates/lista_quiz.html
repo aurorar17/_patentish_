@@ -1,0 +1,19 @@
+<!-- templates/quiz/lista_quiz.html -->
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Lista dei Quiz</title>
+</head>
+
+<body>
+    <h1>Quiz</h1>
+    <ul>
+        {% for quiz in quiz %}
+        <li>{{ quiz.domanda_italiano }} - {{ quiz.domanda_inglese }}</li>
+        {% endfor %}
+    </ul>
+</body>
+
+</html>

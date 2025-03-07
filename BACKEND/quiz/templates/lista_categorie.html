@@ -1,0 +1,19 @@
+<!-- templates/quiz/lista_categorie.html -->
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Liste delle Categorie</title>
+</head>
+
+<body>
+    <h1>Categorie</h1>
+    <ul>
+        {% for categoria in categorie %}
+        <li>{{ categoria.nome }}</li>
+        {% endfor %}
+    </ul>
+</body>
+
+</html>
