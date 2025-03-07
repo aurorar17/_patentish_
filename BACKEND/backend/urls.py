@@ -14,18 +14,26 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import path
 from django.http import JsonResponse
 from django.conf import settings
+from django.conf.urls.static import static
 
+# Funzione per testare la configurazione
 def test_config(request):
     return JsonResponse({
         'debug_mode': settings.DEBUG,
         'secret_key_works': bool(settings.SECRET_KEY)
     })
 
+# Dichiarazione di urlpatterns come lista vuota
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('test-config/', test_config),
+    path('admin/', admin.site.urls),  # percorso per l'admin di Django
+    path('test-config/', test_config),  # percorso per il test di configurazione
 ]
+
+# Aggiungi la gestione dei file media solo se in modalità DEBUG
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
