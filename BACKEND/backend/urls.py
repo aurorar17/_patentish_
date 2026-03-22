@@ -16,7 +16,7 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.http import JsonResponse
 from django.conf import settings
 from django.conf.urls.static import static
@@ -30,8 +30,9 @@ def test_config(request):
 
 # Dichiarazione di urlpatterns come lista vuota
 urlpatterns = [
-    path('admin/', admin.site.urls),  # percorso per l'admin di Django
-    path('test-config/', test_config),  # percorso per il test di configurazione
+    path('admin/', admin.site.urls),
+    path('test-config/', test_config),
+    path('', include('quiz.urls')),
 ]
 
 # Aggiungi la gestione dei file media solo se in modalità DEBUG

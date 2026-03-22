@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Quiz Singolo</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
+        margin: 0;
+        padding: 30px;
+      }
+
+      .quiz-card {
+        background: white;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 40px auto;
+        max-width: 700px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      button {
+        padding: 10px 18px;
+        margin-right: 10px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <script>
+    const rispostaCorretta =
+      "{{ domanda.risposta_corretta|yesno:'true,false' }}";
+
+    function controllaRisposta(valore) {
+      if (valore === rispostaCorretta) {
+        alert("Risposta corretta!");
+      } else {
+        alert("Risposta sbagliata!");
+      }
+    }
+  </script>
+  <body>
+    <h1>Quiz</h1>
+
+    <div class="quiz-card">
+      <p><strong>Categoria:</strong> {{ domanda.categoria.nome }}</p>
+      <p><strong>Domanda IT:</strong> {{ domanda.domanda_italiano }}</p>
+      <p><strong>Domanda EN:</strong> {{ domanda.domanda_inglese }}</p>
+
+      <button onclick="controllaRisposta('true')">Vero</button>
+      <button onclick="controllaRisposta('false')">Falso</button>
+
+      <p><a href="/quiz-singolo/?id={{ domanda.id }}">Prossima domanda</a></p>
+    </div>
+  </body>
+</html>

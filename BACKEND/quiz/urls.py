@@ -1,11 +1,9 @@
-from django.urls import path, include
-from rest_framework.routers import DefaultRouter
+from django.urls import path
 from . import views
 
-router = DefaultRouter()
-router.register(r'quiz', views)
-
 urlpatterns = [
-    path('categorie/', views.lista_categorie, name= 'lista_categorie'),
-    path('quiz/', views.lista_quiz, name= 'lista_quiz'),
-]   
+    path('categorie/', views.lista_categorie, name='lista_categorie'),
+    path('quiz/', views.lista_quiz, name='lista_quiz'),
+    path('quiz-singolo/', views.quiz_singolo, name='quiz_singolo'),
+
+]

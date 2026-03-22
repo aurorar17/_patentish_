@@ -1,0 +1,56 @@
+categoria,domanda_italiano,domanda_inglese,risposta_corretta
+
+Manutenzione e uso dei veicoli,"Una corretta pressione dei pneumatici riduce il consumo di carburante?","Does correct tire pressure reduce fuel consumption?",true
+Manutenzione e uso dei veicoli,"I pneumatici troppo gonfi aumentano lo spazio di frenata?","Overinflated tires increase braking distance?",true
+Manutenzione e uso dei veicoli,"I pneumatici lisci aumentano il rischio di aquaplaning?","Worn tires increase the risk of aquaplaning?",true
+Manutenzione e uso dei veicoli,"Il battistrada deve avere una profondità minima di legge?","Tire tread must have a legal minimum depth?",true
+Manutenzione e uso dei veicoli,"Pneumatici sgonfi aumentano il consumo di carburante?","Underinflated tires increase fuel consumption?",true
+Manutenzione e uso dei veicoli,"L'olio motore serve a lubrificare il motore?","Engine oil is used to lubricate the engine?",true
+Manutenzione e uso dei veicoli,"Circolare con poco olio motore può danneggiare il motore?","Driving with low engine oil can damage the engine?",true
+Manutenzione e uso dei veicoli,"Il liquido di raffreddamento evita il surriscaldamento del motore?","Coolant prevents engine overheating?",true
+Manutenzione e uso dei veicoli,"La batteria serve per avviare il motore?","The battery is used to start the engine?",true
+Manutenzione e uso dei veicoli,"Freni usurati aumentano lo spazio di frenata?","Worn brakes increase braking distance?",true
+Manutenzione e uso dei veicoli,"Le luci del veicolo devono essere sempre funzionanti?","All vehicle lights must be working?",true
+Manutenzione e uso dei veicoli,"Gli specchietti devono essere regolati prima di partire?","Mirrors must be adjusted before driving?",true
+Manutenzione e uso dei veicoli,"Un carico mal fissato può cadere dal veicolo?","Improperly secured load can fall from the vehicle?",true
+Manutenzione e uso dei veicoli,"Il carico sul tetto aumenta il rischio di ribaltamento?","Roof load increases rollover risk?",true
+Manutenzione e uso dei veicoli,"Una cattiva manutenzione aumenta l'inquinamento?","Poor maintenance increases pollution?",true
+Manutenzione e uso dei veicoli,"La revisione del veicolo è obbligatoria periodicamente?","Vehicle inspection is mandatory periodically?",true
+Manutenzione e uso dei veicoli,"Rumori anomali del veicolo devono essere controllati?","Unusual vehicle noises should be checked?",true
+Manutenzione e uso dei veicoli,"Una spia rossa accesa indica un pericolo grave?","A red warning light indicates a serious problem?",true
+Manutenzione e uso dei veicoli,"La manutenzione regolare aumenta la sicurezza del veicolo?","Regular maintenance increases vehicle safety?",true
+Manutenzione e uso dei veicoli,"Si può ignorare la pressione dei pneumatici?","Can tire pressure be ignored?",false
+
+Elementi costitutivi dei veicoli,"Il volante serve per cambiare direzione al veicolo?","Is the steering wheel used to change the vehicle direction?",true
+Elementi costitutivi dei veicoli,"Il sistema frenante serve a rallentare e fermare il veicolo?","Is the braking system used to slow and stop the vehicle?",true
+Elementi costitutivi dei veicoli,"Le sospensioni migliorano la stabilità e il comfort del veicolo?","Do suspensions improve stability and comfort?",true
+Elementi costitutivi dei veicoli,"Gli pneumatici garantiscono l'aderenza del veicolo alla strada?","Do tires provide road grip?",true
+Elementi costitutivi dei veicoli,"Il motore serve a muovere il veicolo?","Is the engine used to move the vehicle?",true
+Elementi costitutivi dei veicoli,"La marmitta riduce il rumore e l'inquinamento?","Does the exhaust reduce noise and pollution?",true
+Elementi costitutivi dei veicoli,"La frizione serve a collegare e scollegare il motore dalle ruote?","Is the clutch used to connect and disconnect engine and wheels?",true
+Elementi costitutivi dei veicoli,"Il cambio serve a variare la velocità e la potenza?","Is the gearbox used to change speed and power?",true
+Elementi costitutivi dei veicoli,"Gli ammortizzatori servono a ridurre le oscillazioni del veicolo?","Do shock absorbers reduce vehicle oscillations?",true
+Elementi costitutivi dei veicoli,"Il radiatore serve a raffreddare il motore?","Is the radiator used to cool the engine?",true
+Elementi costitutivi dei veicoli,"La batteria alimenta l'impianto elettrico del veicolo?","Does the battery power the electrical system?",true
+Elementi costitutivi dei veicoli,"Le cinture di sicurezza fanno parte dei sistemi di sicurezza del veicolo?","Are seat belts part of vehicle safety systems?",true
+Elementi costitutivi dei veicoli,"L'airbag è un sistema di sicurezza passiva?","Is the airbag a passive safety system?",true
+Elementi costitutivi dei veicoli,"Il servosterzo rende lo sterzo più leggero?","Does power steering make steering easier?",true
+Elementi costitutivi dei veicoli,"Il differenziale permette alle ruote di girare a velocità diverse in curva?","Does the differential allow wheels to rotate at different speeds in a turn?",true
+Elementi costitutivi dei veicoli,"Il sistema ABS evita il bloccaggio delle ruote in frenata?","Does ABS prevent wheel lock during braking?",true
+Elementi costitutivi dei veicoli,"Le luci del veicolo fanno parte dei dispositivi di segnalazione?","Are vehicle lights signaling devices?",true
+Elementi costitutivi dei veicoli,"Il clacson è un dispositivo di segnalazione acustica?","Is the horn an acoustic signaling device?",true
+Elementi costitutivi dei veicoli,"Il parabrezza serve a proteggere il conducente dall'aria e dagli oggetti?","Does the windshield protect the driver from air and objects?",true
+Elementi costitutivi dei veicoli,"I tergicristalli servono a pulire il parabrezza?","Are windshield wipers used to clean the windshield?",true
+
+Norme ambientali,"Una guida brusca aumenta l'inquinamento?","Does aggressive driving increase pollution?",true
+Norme ambientali,"Accelerazioni e frenate frequenti aumentano il consumo di carburante?","Do frequent acceleration and braking increase fuel consumption?",true
+Norme ambientali,"Una corretta manutenzione del veicolo riduce l'inquinamento?","Does proper vehicle maintenance reduce pollution?",true
+Norme ambientali,"Il motore acceso durante la sosta aumenta l'inquinamento?","Does keeping the engine on while stopped increase pollution?",true
+Norme ambientali,"Viaggiare con il veicolo sovraccarico aumenta il consumo di carburante?","Does an overloaded vehicle increase fuel consumption?",true
+Norme ambientali,"La corretta pressione dei pneumatici riduce il consumo di carburante?","Does correct tire pressure reduce fuel consumption?",true
+Norme ambientali,"L'uso non necessario del portapacchi aumenta il consumo?","Does unnecessary roof rack use increase fuel consumption?",true
+Norme ambientali,"Il catalizzatore serve a ridurre i gas inquinanti?","Does the catalytic converter reduce pollutant gases?",true
+Norme ambientali,"Un filtro dell'aria sporco aumenta l'inquinamento?","Does a dirty air filter increase pollution?",true
+Norme ambientali,"Guidare a velocità moderata riduce l'inquinamento?","Does moderate speed reduce pollution?",true
+Norme ambientali,"Il rumore del veicolo contribuisce all'inquinamento ambientale?","Does vehicle noise contribute to environmental pollution?",true
+Norme ambientali,"Spegnere il motore nelle soste lunghe riduce l'inquinamento?","Does turning off the engine during long stops reduce pollution?",true

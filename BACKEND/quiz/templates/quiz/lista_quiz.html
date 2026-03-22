@@ -1,0 +1,59 @@
+<!-- templates/quiz/lista_quiz.html -->
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lista dei Quiz</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
+        margin: 0;
+        padding: 30px;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .quiz-card {
+        background: white;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      }
+
+      .quiz-card p {
+        margin: 8px 0;
+      }
+
+      h2 {
+        margin-top: 35px;
+        margin-bottom: 15px;
+        color: #333;
+        border-left: 5px solid #4a90e2;
+        padding-left: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Quiz</h1>
+
+    {% for categoria in categorie %}
+    <h2>{{ categoria.nome }}</h2>
+
+    {% for q in categoria.quiz_set.all %}
+    <div class="quiz-card">
+      <p><strong>Domanda IT:</strong> {{ q.domanda_italiano }}</p>
+      <p><strong>Domanda EN:</strong> {{ q.domanda_inglese }}</p>
+      <p>
+        <strong>Risposta corretta:</strong>
+        {% if q.risposta_corretta %} Vero {% else %} Falso {% endif %}
+      </p>
+    </div>
+    {% endfor %} {% endfor %}
+  </body>
+</html>
