@@ -54,3 +54,177 @@ Norme ambientali,"Un filtro dell'aria sporco aumenta l'inquinamento?","Does a di
 Norme ambientali,"Guidare a velocità moderata riduce l'inquinamento?","Does moderate speed reduce pollution?",true
 Norme ambientali,"Il rumore del veicolo contribuisce all'inquinamento ambientale?","Does vehicle noise contribute to environmental pollution?",true
 Norme ambientali,"Spegnere il motore nelle soste lunghe riduce l'inquinamento?","Does turning off the engine during long stops reduce pollution?",true
+
+Condizioni psico-fisiche alla guida,"La stanchezza riduce i tempi di reazione?","Does fatigue reduce reaction time?",false
+Condizioni psico-fisiche alla guida,"La stanchezza aumenta il rischio di incidenti?","Does fatigue increase accident risk?",true
+Condizioni psico-fisiche alla guida,"L'alcol riduce la capacità di attenzione?","Does alcohol reduce attention ability?",true
+Condizioni psico-fisiche alla guida,"Anche piccole quantità di alcol possono influire sulla guida?","Can small amounts of alcohol affect driving?",true
+Condizioni psico-fisiche alla guida,"Le droghe migliorano i tempi di reazione alla guida?","Do drugs improve reaction time while driving?",false
+Condizioni psico-fisiche alla guida,"Alcuni farmaci possono ridurre la capacità di guidare?","Can some medicines reduce driving ability?",true
+Condizioni psico-fisiche alla guida,"Guidare sotto effetto di alcol aumenta il rischio di incidenti?","Does driving under alcohol increase accident risk?",true
+Condizioni psico-fisiche alla guida,"Lo stress può influire negativamente sulla guida?","Can stress negatively affect driving?",true
+Condizioni psico-fisiche alla guida,"La rabbia durante la guida può aumentare il rischio di incidenti?","Can anger while driving increase accident risk?",true
+Condizioni psico-fisiche alla guida,"Una buona condizione fisica migliora la sicurezza alla guida?","Does good physical condition improve driving safety?",true
+Condizioni psico-fisiche alla guida,"La sonnolenza è pericolosa quanto l'alcol alla guida?","Is drowsiness as dangerous as alcohol while driving?",true
+Condizioni psico-fisiche alla guida,"È consigliato fare pause durante viaggi lunghi?","Is it recommended to take breaks during long trips?",true
+Condizioni psico-fisiche alla guida,"Bere caffè elimina gli effetti dell'alcol?","Does coffee eliminate alcohol effects?",false
+Condizioni psico-fisiche alla guida,"L'alcol aumenta il tempo di reazione?","Does alcohol increase reaction time?",true
+Condizioni psico-fisiche alla guida,"Le emozioni forti possono influire sulla capacità di guida?","Can strong emotions affect driving ability?",true
+Condizioni psico-fisiche alla guida,"Guidare quando si è molto stanchi è pericoloso?","Is driving when very tired dangerous?",true
+Condizioni psico-fisiche alla guida,"I farmaci vanno sempre controllati prima di guidare?","Should medicines always be checked before driving?",true
+Condizioni psico-fisiche alla guida,"L'uso di droghe può compromettere la guida?","Can drug use impair driving?",true
+
+Comportamento in caso di incidente,"In caso di incidente bisogna fermarsi?","In case of an accident must you stop?",true
+Comportamento in caso di incidente,"In caso di incidente senza feriti si può andare via senza fermarsi?","In an accident without injuries can you leave without stopping?",false
+Comportamento in caso di incidente,"Bisogna segnalare un incidente con il triangolo?","Must you signal an accident with the warning triangle?",true
+Comportamento in caso di incidente,"Il triangolo va posizionato a distanza adeguata dal veicolo?","Should the warning triangle be placed at a safe distance from the vehicle?",true
+Comportamento in caso di incidente,"In caso di incidente con feriti bisogna chiamare i soccorsi?","In case of an accident with injured people must you call emergency services?",true
+Comportamento in caso di incidente,"Si deve prestare soccorso ai feriti?","Must you help injured persons?",true
+Comportamento in caso di incidente,"Si possono spostare i feriti senza motivo?","Can injured persons be moved without reason?",false
+Comportamento in caso di incidente,"Bisogna spegnere il motore dei veicoli coinvolti?","Should you turn off the engines of involved vehicles?",true
+Comportamento in caso di incidente,"Bisogna indossare il giubbotto riflettente dopo un incidente?","Should you wear a reflective vest after an accident?",true
+Comportamento in caso di incidente,"Bisogna mettere in sicurezza il luogo dell'incidente?","Should you secure the accident area?",true
+Comportamento in caso di incidente,"Si deve evitare di creare intralcio al traffico se possibile?","Should you avoid blocking traffic if possible?",true
+Comportamento in caso di incidente,"In caso di incidente è obbligatorio fornire le proprie generalità?","In case of accident must you provide your personal details?",true
+Comportamento in caso di incidente,"Si può fuggire dopo un incidente?","Can you leave after an accident?",false
+Comportamento in caso di incidente,"Bisogna chiamare il numero di emergenza in caso di feriti?","Should you call the emergency number if there are injured?",true
+Comportamento in caso di incidente,"È obbligatorio segnalare il veicolo fermo sulla carreggiata?","Must a stopped vehicle on the road be signaled?",true
+Comportamento in caso di incidente,"Bisogna mantenere la calma in caso di incidente?","Should you stay calm in case of an accident?",true
+
+Documenti di circolazione,"Il conducente deve avere con sé la patente di guida?","Must the driver carry the driving license?",true
+Documenti di circolazione,"Il conducente deve avere con sé la carta di circolazione?","Must the driver carry the vehicle registration document?",true
+Documenti di circolazione,"Il certificato di assicurazione è un documento obbligatorio?","Is the insurance certificate a mandatory document?",true
+Documenti di circolazione,"Si può circolare senza assicurazione?","Can you drive without insurance?",false
+Documenti di circolazione,"La carta di circolazione contiene i dati del veicolo?","Does the registration document contain vehicle data?",true
+Documenti di circolazione,"La patente di guida è necessaria per guidare un veicolo?","Is a driving license required to drive a vehicle?",true
+Documenti di circolazione,"Si può guidare con patente scaduta?","Can you drive with an expired license?",false
+Documenti di circolazione,"La revisione deve essere indicata sulla carta di circolazione?","Is the inspection recorded on the registration document?",true
+Documenti di circolazione,"Il passaggio di proprietà deve essere registrato?","Must ownership transfer be registered?",true
+Documenti di circolazione,"La carta di circolazione deve essere aggiornata in caso di modifiche al veicolo?","Must the registration document be updated if the vehicle is modified?",true
+Documenti di circolazione,"Si può circolare con documenti non aggiornati?","Can you drive with outdated documents?",false
+Documenti di circolazione,"Il conducente deve mostrare i documenti alle forze dell'ordine se richiesto?","Must the driver show documents to police if requested?",true
+Documenti di circolazione,"L'assicurazione copre i danni causati a terzi?","Does insurance cover damages caused to third parties?",true
+Documenti di circolazione,"La targa identifica il veicolo?","Does the license plate identify the vehicle?",true
+Documenti di circolazione,"Si può circolare con targa illeggibile?","Can you drive with an unreadable license plate?",false
+
+Patenti di guida e sanzioni,"La patente è obbligatoria per guidare un veicolo?","Is a driving license required to drive a vehicle?",true
+Patenti di guida e sanzioni,"Si può guidare con patente scaduta?","Can you drive with an expired driving license?",false
+Patenti di guida e sanzioni,"La patente ha un punteggio a punti?","Does the driving license have a point system?",true
+Patenti di guida e sanzioni,"Le infrazioni possono comportare la perdita di punti patente?","Can traffic violations cause loss of license points?",true
+Patenti di guida e sanzioni,"Si possono perdere tutti i punti della patente?","Can you lose all license points?",true
+Patenti di guida e sanzioni,"Se si perdono tutti i punti bisogna rifare l'esame?","If all points are lost must you retake the exam?",true
+Patenti di guida e sanzioni,"La patente può essere sospesa per gravi infrazioni?","Can a license be suspended for serious violations?",true
+Patenti di guida e sanzioni,"La patente può essere revocata?","Can a driving license be revoked?",true
+Patenti di guida e sanzioni,"Guidare senza patente è consentito?","Is driving without a license allowed?",false
+Patenti di guida e sanzioni,"Superare i limiti di velocità può comportare sanzioni?","Can speeding result in penalties?",true
+Patenti di guida e sanzioni,"Guidare sotto effetto di alcol comporta sanzioni?","Does driving under alcohol result in penalties?",true
+Patenti di guida e sanzioni,"Il mancato uso delle cinture comporta sanzioni?","Does not wearing seat belts result in penalties?",true
+Patenti di guida e sanzioni,"Usare il telefono alla guida comporta sanzioni?","Does using a phone while driving result in penalties?",true
+Patenti di guida e sanzioni,"Le sanzioni possono essere solo pecuniarie?","Are penalties only monetary?",false
+Patenti di guida e sanzioni,"Le sanzioni possono includere sospensione della patente?","Can penalties include license suspension?",true
+
+Elementi per la sicurezza,"Le cinture di sicurezza riducono le conseguenze degli incidenti?","Do seat belts reduce the consequences of accidents?",true
+Elementi per la sicurezza,"È obbligatorio usare le cinture di sicurezza?","Is it mandatory to wear seat belts?",true
+Elementi per la sicurezza,"L'airbag è un sistema di sicurezza passiva?","Is the airbag a passive safety system?",true
+Elementi per la sicurezza,"Il casco è obbligatorio sui motocicli?","Is a helmet mandatory on motorcycles?",true
+Elementi per la sicurezza,"Il sistema ABS evita il bloccaggio delle ruote in frenata?","Does ABS prevent wheel lock during braking?",true
+Elementi per la sicurezza,"L'ESP migliora la stabilità del veicolo?","Does ESP improve vehicle stability?",true
+Elementi per la sicurezza,"I sistemi di sicurezza attiva aiutano a evitare incidenti?","Do active safety systems help prevent accidents?",true
+Elementi per la sicurezza,"I sistemi di sicurezza passiva riducono i danni dopo un incidente?","Do passive safety systems reduce damage after an accident?",true
+Elementi per la sicurezza,"I poggiatesta riducono il rischio di colpo di frusta?","Do headrests reduce whiplash risk?",true
+Elementi per la sicurezza,"I pneumatici in buono stato migliorano la sicurezza?","Do tires in good condition improve safety?",true
+Elementi per la sicurezza,"Freni efficienti migliorano la sicurezza del veicolo?","Do efficient brakes improve vehicle safety?",true
+Elementi per la sicurezza,"Le luci funzionanti migliorano la visibilità e la sicurezza?","Do working lights improve visibility and safety?",true
+Elementi per la sicurezza,"Gli specchietti retrovisori fanno parte dei dispositivi di sicurezza?","Are rearview mirrors safety devices?",true
+Elementi per la sicurezza,"Il giubbotto riflettente serve per essere visibili in caso di emergenza?","Is the reflective vest used to be visible in emergencies?",true
+Elementi per la sicurezza,"Il triangolo di emergenza serve a segnalare un veicolo fermo?","Is the warning triangle used to signal a stopped vehicle?",true
+Elementi per la sicurezza,"Viaggiare senza cinture è sicuro a bassa velocità?","Is it safe to travel without seat belts at low speed?",false
+
+Uso delle luci spie e simboli,"Le luci anabbaglianti si usano di notte?","Are low beam headlights used at night?",true
+Uso delle luci spie e simboli,"Le luci abbaglianti si usano quando si incrociano altri veicoli?","Are high beams used when meeting other vehicles?",false
+Uso delle luci spie e simboli,"Le luci abbaglianti si usano su strade extraurbane senza illuminazione?","Are high beams used on unlit rural roads?",true
+Uso delle luci spie e simboli,"Le luci di posizione rendono il veicolo visibile?","Do position lights make the vehicle visible?",true
+Uso delle luci spie e simboli,"Le luci fendinebbia si usano in caso di nebbia?","Are fog lights used in fog?",true
+Uso delle luci spie e simboli,"Le luci fendinebbia si usano sempre di notte?","Are fog lights always used at night?",false
+Uso delle luci spie e simboli,"Le frecce indicano la direzione di svolta?","Do turn signals indicate direction of turn?",true
+Uso delle luci spie e simboli,"La luce di stop si accende quando si frena?","Does the brake light turn on when braking?",true
+Uso delle luci spie e simboli,"La retromarcia ha una luce bianca?","Does reverse gear have a white light?",true
+Uso delle luci spie e simboli,"Le quattro frecce indicano pericolo o veicolo fermo?","Do hazard lights indicate danger or stopped vehicle?",true
+Uso delle luci spie e simboli,"Una spia rossa indica un pericolo grave?","Does a red warning light indicate a serious problem?",true
+Uso delle luci spie e simboli,"Una spia gialla indica un'anomalia?","Does a yellow warning light indicate a malfunction?",true
+Uso delle luci spie e simboli,"Una spia verde indica un dispositivo acceso?","Does a green light indicate a device is on?",true
+Uso delle luci spie e simboli,"Si può guidare con una spia rossa accesa?","Can you drive with a red warning light on?",false
+Uso delle luci spie e simboli,"Le luci devono essere usate anche di giorno in galleria?","Must lights be used during the day in tunnels?",true
+Uso delle luci spie e simboli,"Le luci anabbaglianti si usano in caso di pioggia?","Are low beam headlights used in rain?",true
+Uso delle luci spie e simboli,"Le luci di posizione si usano per illuminare la strada?","Are position lights used to illuminate the road?",false
+Uso delle luci spie e simboli,"Gli indicatori di direzione devono essere usati prima di svoltare?","Must turn signals be used before turning?",true
+
+Norme varie,"È vietato usare il telefono alla guida senza vivavoce?","Is it forbidden to use a phone while driving without hands-free?",true
+Norme varie,"È obbligatorio usare le cinture di sicurezza?","Is it mandatory to wear seat belts?",true
+Norme varie,"I bambini devono usare sistemi di ritenuta adeguati?","Must children use appropriate child restraints?",true
+Norme varie,"È vietato guidare sotto effetto di alcol?","Is it forbidden to drive under the influence of alcohol?",true
+Norme varie,"È vietato gettare oggetti dal veicolo?","Is it forbidden to throw objects from the vehicle?",true
+Norme varie,"È consentito aprire la portiera senza controllare?","Is it allowed to open the door without checking?",false
+Norme varie,"Bisogna facilitare il passaggio dei veicoli di emergenza?","Must you give way to emergency vehicles?",true
+Norme varie,"I veicoli di emergenza con sirena e lampeggianti hanno la precedenza?","Do emergency vehicles with siren and flashing lights have priority?",true
+Norme varie,"È vietato trainare un veicolo senza rispettare le regole?","Is it forbidden to tow a vehicle without following rules?",true
+Norme varie,"È consentito guidare con cuffie che isolano dai rumori del traffico?","Is it allowed to drive with headphones that block traffic noise?",false
+Norme varie,"Bisogna mantenere il controllo del veicolo in ogni situazione?","Must you maintain control of the vehicle at all times?",true
+Norme varie,"È vietato gareggiare su strada pubblica?","Is racing on public roads forbidden?",true
+Norme varie,"Il conducente deve essere sempre in grado di compiere le manovre?","Must the driver always be able to perform maneuvers?",true
+Norme varie,"È vietato trasportare persone in modo pericoloso?","Is it forbidden to transport people in a dangerous way?",true
+Norme varie,"È obbligatorio fermarsi all'alt delle forze dell'ordine?","Must you stop when ordered by police?",true
+Norme varie,"È consentito guidare senza avere libertà di movimento?","Is it allowed to drive without freedom of movement?",false
+
+Fermata sosta arresto e partenza,"La fermata è una sospensione breve della marcia?","Is stopping a short interruption of movement?",true
+Fermata sosta arresto e partenza,"La sosta è una sospensione della marcia di lunga durata?","Is parking a long stop of the vehicle?",true
+Fermata sosta arresto e partenza,"L'arresto è una sospensione della marcia imposta dal traffico?","Is stopping due to traffic called a forced stop?",true
+Fermata sosta arresto e partenza,"Durante la fermata il conducente può allontanarsi dal veicolo?","Can the driver leave the vehicle during a stop?",false
+Fermata sosta arresto e partenza,"Durante la sosta il conducente può allontanarsi dal veicolo?","Can the driver leave the vehicle during parking?",true
+Fermata sosta arresto e partenza,"È vietata la sosta davanti ai passi carrabili?","Is parking in front of driveways forbidden?",true
+Fermata sosta arresto e partenza,"È vietata la sosta sugli attraversamenti pedonali?","Is parking on pedestrian crossings forbidden?",true
+Fermata sosta arresto e partenza,"È vietata la sosta in galleria?","Is parking in tunnels forbidden?",true
+Fermata sosta arresto e partenza,"È vietata la sosta sui dossi?","Is parking on hill crests forbidden?",true
+Fermata sosta arresto e partenza,"È vietata la sosta nelle curve con scarsa visibilità?","Is parking on blind curves forbidden?",true
+Fermata sosta arresto e partenza,"La fermata è consentita dove è vietata la sosta se non crea intralcio?","Is stopping allowed where parking is forbidden if no obstruction is caused?",true
+Fermata sosta arresto e partenza,"Prima di aprire la portiera bisogna controllare che non arrivino veicoli?","Before opening the door must you check for vehicles?",true
+Fermata sosta arresto e partenza,"Bisogna segnalare la partenza con l'indicatore di direzione?","Must you signal before moving off?",true
+Fermata sosta arresto e partenza,"Scendendo dal veicolo bisogna lasciare il veicolo in sicurezza?","Must you secure the vehicle when leaving it?",true
+Fermata sosta arresto e partenza,"È consentito sostare in doppia fila?","Is double parking allowed?",false
+Fermata sosta arresto e partenza,"È vietato sostare vicino ai semafori se si crea intralcio?","Is parking near traffic lights forbidden if it obstructs traffic?",true
+Fermata sosta arresto e partenza,"La partenza deve avvenire senza creare pericolo o intralcio?","Must moving off be done without danger or obstruction?",true
+
+Norme sul sorpasso,"Il sorpasso si effettua normalmente a sinistra?","Is overtaking normally done on the left?",true
+Norme sul sorpasso,"Si può sorpassare a destra?","Can you overtake on the right?",false
+Norme sul sorpasso,"Si può sorpassare a destra un veicolo che svolta a sinistra?","Can you overtake on the right a vehicle turning left?",true
+Norme sul sorpasso,"Prima di sorpassare bisogna controllare che la strada sia libera?","Before overtaking must you check the road is clear?",true
+Norme sul sorpasso,"Prima di sorpassare bisogna segnalare con l'indicatore di direzione?","Before overtaking must you signal?",true
+Norme sul sorpasso,"È vietato sorpassare in prossimità di curve con scarsa visibilità?","Is overtaking forbidden near blind curves?",true
+Norme sul sorpasso,"È vietato sorpassare in prossimità dei dossi?","Is overtaking forbidden near hill crests?",true
+Norme sul sorpasso,"È vietato sorpassare sugli attraversamenti pedonali?","Is overtaking forbidden on pedestrian crossings?",true
+Norme sul sorpasso,"È vietato sorpassare in galleria?","Is overtaking forbidden in tunnels?",true
+Norme sul sorpasso,"Si può sorpassare se la linea è continua?","Can you overtake if there is a continuous line?",false
+Norme sul sorpasso,"Dopo il sorpasso bisogna rientrare a destra?","After overtaking must you return to the right?",true
+Norme sul sorpasso,"Il veicolo sorpassato deve facilitare il sorpasso?","Must the overtaken vehicle facilitate overtaking?",true
+Norme sul sorpasso,"È vietato aumentare la velocità quando si viene sorpassati?","Is it forbidden to accelerate when being overtaken?",true
+Norme sul sorpasso,"Si può sorpassare un veicolo fermo?","Can you overtake a stopped vehicle?",true
+Norme sul sorpasso,"Il sorpasso deve avvenire senza creare pericolo?","Must overtaking be done without danger?",true
+Norme sul sorpasso,"Si può sorpassare in prossimità di un incrocio?","Can you overtake near an intersection?",false
+Norme sul sorpasso,"È vietato sorpassare un autobus fermo con passeggeri che salgono o scendono?","Is overtaking a stopped bus with boarding passengers forbidden?",true
+
+Precedenza agli incroci,"Agli incroci senza segnaletica bisogna dare precedenza a destra?","At intersections without signs must you give way to the right?",true
+Precedenza agli incroci,"Il segnale STOP impone di fermarsi sempre?","Does the STOP sign require you to always stop?",true
+Precedenza agli incroci,"Il segnale DARE PRECEDENZA obbliga a fermarsi sempre?","Does the YIELD sign always require stopping?",false
+Precedenza agli incroci,"Chi proviene da destra ha la precedenza negli incroci senza segnaletica?","Does the vehicle from the right have priority at uncontrolled intersections?",true
+Precedenza agli incroci,"I veicoli su rotaia hanno la precedenza?","Do rail vehicles have priority?",true
+Precedenza agli incroci,"I veicoli di emergenza con sirena hanno la precedenza?","Do emergency vehicles with siren have priority?",true
+Precedenza agli incroci,"Entrando in una rotatoria bisogna dare precedenza ai veicoli già presenti?","When entering a roundabout must you give way to vehicles already inside?",true
+Precedenza agli incroci,"Uscendo da un parcheggio bisogna dare precedenza?","When leaving a parking area must you give way?",true
+Precedenza agli incroci,"Chi svolta a sinistra deve dare precedenza ai veicoli che arrivano di fronte?","Must a vehicle turning left give way to oncoming traffic?",true
+Precedenza agli incroci,"Il segnale di precedenza dà diritto di passare sempre?","Does a priority sign always give the right to go?",false
+Precedenza agli incroci,"Agli incroci bisogna rallentare anche con precedenza?","Must you slow down at intersections even with priority?",true
+Precedenza agli incroci,"Chi entra in una strada deve dare precedenza ai veicoli che già circolano?","Must you give way when entering a road?",true
+Precedenza agli incroci,"Il semaforo verde dà sempre precedenza?","Does green light always give priority?",false
+Precedenza agli incroci,"In presenza di agenti del traffico bisogna seguire i loro segnali?","Must you follow traffic officer signals?",true
+Precedenza agli incroci,"I pedoni sugli attraversamenti hanno la precedenza?","Do pedestrians on crossings have priority?",true
+Precedenza agli incroci,"Chi fa retromarcia deve dare precedenza?","Must a reversing vehicle give way?",true
