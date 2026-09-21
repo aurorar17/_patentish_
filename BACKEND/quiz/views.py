@@ -2,6 +2,8 @@ from django.shortcuts import render
 from .models import Categoria, Quiz
 from rest_framework import viewsets
 from .serializers import QuizSerializer
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
 
 def lista_categorie(request):
     categorie = Categoria.objects.all()
@@ -28,3 +30,9 @@ def quiz_singolo(request):
 class QuizViewSet(viewsets.ModelViewSet):
     queryset = Quiz.objects.all()
     serializer_class = QuizSerializer
+
+@api_view(["GET"])
+def scheda_random(request):
+    quiz = Quiz.objects.order_by("?")[:30]
+    serializer = QuizSerializer(quiz, many=True, context={"request": request})
+    return Response(serializer.data)
