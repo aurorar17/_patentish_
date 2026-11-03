@@ -32,6 +32,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
+DEEPL_AUTH_KEY = config('DEEPL_AUTH_KEY', default='')
 
 ALLOWED_HOSTS = []
 

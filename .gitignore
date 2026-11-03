@@ -10,7 +10,6 @@ __pycache__/
 # File di configurazione locali
 *.env
 *.local
-*.json
 
 # C extensions
 *.so
@@ -182,6 +181,9 @@ cython_debug/
 
 # File di database
 *.sqlite3
+BACKEND/quiz_translations_review.csv
+BACKEND/quiz_translations_deepl_review.csv
+BACKEND/.argos/
 
 # Node modules 
 node_modules/
