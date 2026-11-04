@@ -8,15 +8,13 @@ Il progetto è in sviluppo. La prima pubblicazione è dedicata ai quiz; lezioni 
 
 ## Cosa puoi fare
 
+- Scegliere il livello di supporto linguistico attraverso un test iniziale.
 - Esercitarti per categoria oppure con una scheda mista da 30 domande.
 - Rispondere Vero/Falso a domande con testo e, quando disponibile, immagine.
-- Scegliere il livello di supporto linguistico attraverso un test iniziale.
 - Consultare traduzioni e aiuti sulle parole disponibili nei contenuti.
 - Creare un account facoltativo e accedere al profilo con storico, risultati ed errori da rivedere.
 - Inviare una segnalazione sui quiz.
 - Eliminare il proprio account dal profilo confermando la password.
-
-> Il salvataggio dei progressi è implementato, ma è stata segnalata un’anomalia durante l’uso con login apparente: la verifica è tra i prossimi interventi. Il dettaglio del lavoro pianificato è in [NEXT_SESSION.md](docs/NEXT_SESSION.md).
 
 ## Tecnologie
 
@@ -187,24 +185,10 @@ La build viene generata in `FRONTEND/dist/`. `npm run preview` permette di ispez
 
 Queste misure richiedono manutenzione e verifica nell’ambiente pubblico. Le impostazioni locali con `DEBUG=True` sono destinate allo sviluppo.
 
-## Pubblicazione e documenti legali
+## REFERENCES
 
-Il provider di hosting non è ancora stato scelto. Prima di pubblicare, seguire la [checklist di preparazione al deploy](docs/DEPLOYMENT_READINESS.md): dominio, HTTPS, database privato, segreti, storage, backup, protezione dell’admin e controlli finali.
+- Repository usato come riferimento per i quiz è [Ed0ardo/QuizPatenteB](https://github.com/Ed0ardo/QuizPatenteB). (I quiz sono aggiornati al 2023, il file `quizPatenteB2023.json` contiene 7139 domande fra cui 3983 con immagini, le immagini si trovano nella cartella `img_sign` ).
 
-I documenti seguenti sono **bozze da completare prima di renderle pubbliche**:
+- Picture used are all taken by the owner of the project.
 
-- [Informativa privacy](docs/legal/PRIVACY_NOTICE_DRAFT.md)
-- [Informativa cookie e memoria locale](docs/legal/COOKIE_NOTICE_DRAFT.md)
-- [Condizioni d’uso](docs/legal/TERMS_DRAFT.md)
-- [Registro interno dei trattamenti](docs/legal/RECORD_OF_PROCESSING_DRAFT.md)
-
-Mancano ancora i dati del titolare, i fornitori effettivi, la localizzazione dei dati e i tempi di conservazione. Il README e le bozze non costituiscono una certificazione di conformità.
-
-## Prossimi interventi
-
-Il dettaglio delle richieste è conservato in [NEXT_SESSION.md](docs/NEXT_SESSION.md):
-
-1. Stabilizzare le dimensioni delle schede e la posizione di Vero/Falso su mobile e desktop.
-2. Aggiungere il file delle traduzioni manuali per le categorie 2 e 3.
-3. Correggere l’anomalia segnalata nel salvataggio dei progressi.
-4. Mostrare «Bentornato, [utente]» e l’accesso al profilo al posto dell’introduzione per chi ha effettuato il login.
+- the logo has been made by using Codex, from OpenAI.

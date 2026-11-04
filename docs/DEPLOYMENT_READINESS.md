@@ -40,3 +40,14 @@ Usare PostgreSQL gestito con accesso privato dall’app, TLS verificato, credenz
 - `NUM_PROXIES=0` per impostazione predefinita ignora gli header IP forniti dal client. Impostare il numero reale di proxy solo quando il proxy riscrive gli header. I limiti DRF non sostituiscono un WAF/rate limit contro attacchi distribuiti.
 - L’IP dell’utente non può essere nascosto al server che riceve la connessione. Un reverse proxy può evitare che il browser conosca l’IP del server di origine, ma richiede una configurazione infrastrutturale; non usare la rete di casa per il servizio pubblico.
 - Le dipendenze frontend dichiarate sono tutte utilizzate; Vite e relativo plugin sono stati spostati tra le dipendenze di sviluppo e le versioni fissate al lockfile. Il virtualenv locale esistente non viene ripulito automaticamente: creare l’ambiente di produzione da `requirements.txt` evita di distribuire pacchetti di tooling/traduzione inutili.
+
+## Promemoria richiesto: licenza e provenienza dei quiz
+
+Quando verrà richiesto il deploy, ricordare alla proprietaria di completare questi punti prima della pubblicazione:
+
+- Conservare il testo completo della licenza MIT del dataset `Ed0ardo/QuizPatenteB`, incluso `Copyright (c) 2023 Edoardo`, in un file di attribuzioni di terze parti distribuito con il progetto e consultabile dai crediti del sito.
+- Chiarire la provenienza e i diritti di riutilizzo delle domande e delle immagini: la licenza dichiarata dal repository non dimostra da sola che eventuali diritti di terzi siano coperti. Se necessario chiedere chiarimenti all’autore.
+- Verificare l’attualità delle domande: il README del dataset le dichiara aggiornate al 2023.
+
+Fonte di riferimento: https://github.com/Ed0ardo/QuizPatenteB
+Promemoria aggiunto su richiesta il 4 novembre 2026; da riprendere alla richiesta di deploy, non come notifica a una data prestabilita.
