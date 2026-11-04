@@ -9,6 +9,10 @@ __pycache__/
 
 # File di configurazione locali
 *.env
+.env
+.env.*
+!.env.example
+!**/.env.example
 *.local
 
 # C extensions
@@ -181,6 +185,11 @@ cython_debug/
 
 # File di database
 *.sqlite3
+*.sqlite3-*
+*.sqlite
+*.db
+*.dump
+*.backup
 BACKEND/quiz_translations_review.csv
 BACKEND/quiz_translations_deepl_review.csv
 BACKEND/.argos/

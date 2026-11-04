@@ -8,10 +8,23 @@ from django.middleware.csrf import get_token
 from django.views.decorators.csrf import csrf_protect, ensure_csrf_cookie
 from .models import Categoria, Quiz, QuizFeedback, QuizProgress
 from rest_framework import status, viewsets
+from rest_framework.permissions import IsAdminUser
+from rest_framework.exceptions import ValidationError as APIValidationError
+from django.db import IntegrityError, transaction
 from .serializers import CategoriaSerializer, QuizSerializer
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, throttle_classes
 from rest_framework.response import Response
 from django.db.models import Count
+from .throttles import FeedbackRateThrottle, LoginRateThrottle, RegistrationRateThrottle
+
+def positive_id(value):
+    if isinstance(value, bool) or not isinstance(value, (int, str)) or not str(value).isascii() or not str(value).isdigit():
+        raise APIValidationError("Identificativo non valido.")
+    number = int(value) if len(str(value)) <= 19 else 0
+    if not 0 < number <= 9223372036854775807:
+        raise APIValidationError("Identificativo non valido.")
+    return number
+
 
 def lista_categorie(request):
     categorie = Categoria.objects.all()
@@ -24,6 +37,9 @@ def lista_quiz(request):
 def quiz_singolo(request):
     quiz_id = request.GET.get('id')
 
+    if quiz_id and (not quiz_id.isascii() or not quiz_id.isdigit() or len(quiz_id) > 18):
+        from django.http import HttpResponseBadRequest
+        return HttpResponseBadRequest("Identificativo non valido.")
     if quiz_id:
         domanda = Quiz.objects.filter(id__gt=quiz_id).order_by('id').first()
     else:
@@ -36,6 +52,7 @@ def quiz_singolo(request):
 
 
 class QuizViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsAdminUser]
     queryset = Quiz.objects.all()
     serializer_class = QuizSerializer
 
@@ -57,7 +74,7 @@ def api_quiz(request):
     quiz = Quiz.objects.select_related('categoria').all().order_by('id')
     categoria_id = request.query_params.get('categoria')
     if categoria_id:
-        quiz = quiz.filter(categoria_id=categoria_id)
+        quiz = quiz.filter(categoria_id=positive_id(categoria_id))
     serializer = QuizSerializer(quiz, many=True, context={"request": request})
     return Response(serializer.data)
 
@@ -74,6 +91,7 @@ def api_account(request):
 
 
 @api_view(["POST"])
+@throttle_classes([RegistrationRateThrottle])
 @csrf_protect
 def api_register(request):
     username = str(request.data.get("username", "")).strip()
@@ -83,15 +101,20 @@ def api_register(request):
     if User.objects.filter(username__iexact=username).exists():
         return Response({"error": "Questo nome utente è già in uso."}, status=400)
     try:
-        validate_password(password)
+        validate_password(password, user=User(username=username))
     except ValidationError as error:
         return Response({"error": " ".join(error.messages)}, status=400)
-    user = User.objects.create_user(username=username, password=password)
+    try:
+        with transaction.atomic():
+            user = User.objects.create_user(username=username, password=password)
+    except IntegrityError:
+        return Response({"error": "Questo nome utente è già in uso."}, status=400)
     login(request._request, user)
     return Response({"authenticated": True, "username": user.username}, status=status.HTTP_201_CREATED)
 
 
 @api_view(["POST"])
+@throttle_classes([LoginRateThrottle])
 @csrf_protect
 def api_login(request):
     username = str(request.data.get("username", "")).strip()
@@ -110,6 +133,30 @@ def api_logout(request):
     return Response({"authenticated": False})
 
 
+@api_view(["POST"])
+@throttle_classes([LoginRateThrottle])
+@csrf_protect
+def api_delete_account(request):
+    if not request.user.is_authenticated:
+        return Response({"error": "Accedi prima di eliminare l’account."}, status=401)
+
+    password = str(request.data.get("password", ""))
+    user = authenticate(
+        request._request,
+        username=request.user.get_username(),
+        password=password,
+    )
+    if user is None:
+        return Response({"error": "La password non è corretta."}, status=403)
+
+    # Remove feedback tied to this account too; QuizProgress cascades on user deletion.
+    with transaction.atomic():
+        QuizFeedback.objects.filter(user=user).delete()
+        user.delete()
+    logout(request._request)
+    return Response({"deleted": True})
+
+
 @api_view(["GET", "POST"])
 @csrf_protect
 def api_progress(request):
@@ -120,12 +167,12 @@ def api_progress(request):
         incoming = request.data.get("answers", [])
         if not isinstance(incoming, list) or not incoming or len(incoming) > 100:
             return Response({"error": "La scheda non è valida."}, status=400)
-        ids = [item.get("question_id") for item in incoming if isinstance(item, dict)]
+        ids = [positive_id(item.get("question_id")) for item in incoming if isinstance(item, dict)]
         quizzes = {quiz.id: quiz for quiz in Quiz.objects.filter(id__in=ids)}
         saved_answers = []
         correct = 0
         for item in incoming:
-            quiz = quizzes.get(item.get("question_id")) if isinstance(item, dict) else None
+            quiz = quizzes.get(positive_id(item.get("question_id"))) if isinstance(item, dict) else None
             selected = item.get("selected") if isinstance(item, dict) else None
             if quiz is None or not isinstance(selected, bool):
                 continue
@@ -185,6 +232,7 @@ def api_progress(request):
 
 
 @api_view(["POST"])
+@throttle_classes([FeedbackRateThrottle])
 @csrf_protect
 def api_feedback(request):
     message = str(request.data.get("message", "")).strip()
@@ -199,6 +247,8 @@ def api_feedback(request):
         except ValidationError:
             return Response({"error": "L’indirizzo email non sembra valido."}, status=400)
     question_id = request.data.get("question_id")
+    if question_id is not None:
+        question_id = positive_id(question_id)
     question = Quiz.objects.filter(id=question_id).first() if question_id else None
     feedback = QuizFeedback.objects.create(
         user=request.user if request.user.is_authenticated else None,

@@ -17,24 +17,13 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
-from django.http import JsonResponse
 from django.conf import settings
 from django.conf.urls.static import static
 
-# Funzione per testare la configurazione
-def test_config(request):
-    return JsonResponse({
-        'debug_mode': settings.DEBUG,
-        'secret_key_works': bool(settings.SECRET_KEY)
-    })
-
-# Dichiarazione di urlpatterns come lista vuota
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('test-config/', test_config),
     path('', include('quiz.urls')),
 ]
 
-# Aggiungi la gestione dei file media solo se in modalità DEBUG
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

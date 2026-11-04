@@ -9,6 +9,7 @@ urlpatterns = [
     path("api/categorie/", views.api_categorie, name="api_categorie"),
     path("api/quiz/", views.api_quiz, name="api_quiz"),
     path("api/account/", views.api_account, name="api_account"),
+    path("api/account/delete/", views.api_delete_account, name="api_delete_account"),
     path("api/register/", views.api_register, name="api_register"),
     path("api/login/", views.api_login, name="api_login"),
     path("api/logout/", views.api_logout, name="api_logout"),

@@ -10,7 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+import os
 from pathlib import Path
+
+from django.core.exceptions import ImproperlyConfigured
+
 try:
     from decouple import config
 except ImportError:
@@ -30,11 +34,29 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
-SECRET_KEY = config('SECRET_KEY')
+def csv_setting(name, default=''):
+    return [item.strip() for item in config(name, default=default).split(',') if item.strip()]
+
+
+SECRET_KEY = config('SECRET_KEY', default='')
 DEBUG = config('DEBUG', default=False, cast=bool)
 DEEPL_AUTH_KEY = config('DEEPL_AUTH_KEY', default='')
 
-ALLOWED_HOSTS = []
+if not SECRET_KEY:
+    raise ImproperlyConfigured('Set SECRET_KEY in the environment; never use a placeholder in a deployed environment.')
+if not DEBUG and (
+    len(SECRET_KEY) < 50
+    or len(set(SECRET_KEY)) < 5
+    or SECRET_KEY.startswith('django-insecure-')
+):
+    raise ImproperlyConfigured('Generate a long, random, production-only SECRET_KEY before deployment.')
+
+ALLOWED_HOSTS = csv_setting(
+    'ALLOWED_HOSTS',
+    default='localhost,127.0.0.1,[::1]' if DEBUG else '',
+)
+if not DEBUG and not ALLOWED_HOSTS:
+    raise ImproperlyConfigured('Set ALLOWED_HOSTS to the exact production hostnames.')
 
 
 # Application definition
@@ -86,12 +108,36 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+DB_ENGINE = config('DB_ENGINE', default='sqlite').lower()
+if DB_ENGINE == 'postgresql':
+    db_required = ('DB_NAME', 'DB_USER', 'DB_PASSWORD', 'DB_HOST')
+    db_missing = [name for name in db_required if not config(name, default='')]
+    if db_missing:
+        raise ImproperlyConfigured(f'Missing database environment settings: {", ".join(db_missing)}')
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': config('DB_NAME'),
+            'USER': config('DB_USER'),
+            'PASSWORD': config('DB_PASSWORD'),
+            'HOST': config('DB_HOST'),
+            'PORT': config('DB_PORT', default='5432'),
+            'CONN_MAX_AGE': config('DB_CONN_MAX_AGE', default=60, cast=int),
+            'CONN_HEALTH_CHECKS': True,
+            'OPTIONS': {
+                'sslmode': config('DB_SSLMODE', default='verify-full'),
+            },
+        }
     }
-}
+elif DB_ENGINE == 'sqlite' and DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+else:
+    raise ImproperlyConfigured('Production requires PostgreSQL. SQLite is permitted only with DEBUG=True.')
 
 
 # Password validation
@@ -128,20 +174,70 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ALLOW_ALL_ORIGINS = True  # Solo per sviluppo
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # Frontend React
-    "http://127.0.0.1:3000",
-]
+CORS_ALLOW_ALL_ORIGINS = False
+CORS_ALLOWED_ORIGINS = csv_setting('CORS_ALLOWED_ORIGINS')
+CSRF_TRUSTED_ORIGINS = csv_setting('CSRF_TRUSTED_ORIGINS')
 
-import os
+SESSION_COOKIE_AGE = config('SESSION_COOKIE_AGE', default=60 * 60 * 24 * 7, cast=int)
+SESSION_COOKIE_HTTPONLY = True
+SESSION_COOKIE_SECURE = not DEBUG
+SESSION_COOKIE_SAMESITE = 'Lax'
+CSRF_COOKIE_SECURE = not DEBUG
+CSRF_COOKIE_SAMESITE = 'Lax'
+
+SECURE_SSL_REDIRECT = config('SECURE_SSL_REDIRECT', default=not DEBUG, cast=bool)
+SECURE_PROXY_SSL_HEADER = (
+    ('HTTP_X_FORWARDED_PROTO', 'https')
+    if config('TRUST_X_FORWARDED_PROTO', default=False, cast=bool)
+    else None
+)
+SECURE_HSTS_SECONDS = config('SECURE_HSTS_SECONDS', default=0, cast=int)
+SECURE_HSTS_INCLUDE_SUBDOMAINS = config('SECURE_HSTS_INCLUDE_SUBDOMAINS', default=False, cast=bool)
+SECURE_HSTS_PRELOAD = config('SECURE_HSTS_PRELOAD', default=False, cast=bool)
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_REFERRER_POLICY = 'strict-origin-when-cross-origin'
+X_FRAME_OPTIONS = 'DENY'
+SECURE_CROSS_ORIGIN_OPENER_POLICY = 'same-origin'
+
+DATA_UPLOAD_MAX_MEMORY_SIZE = 5 * 1024 * 1024
+FILE_UPLOAD_MAX_MEMORY_SIZE = 5 * 1024 * 1024
+
+if DEBUG:
+    CACHES = {
+        'default': {
+            'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+            'LOCATION': 'patentish-development-cache',
+        }
+    }
+else:
+    CACHES = {
+        'default': {
+            'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+            'LOCATION': config('CACHE_TABLE', default='django_cache'),
+        }
+    }
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': ['rest_framework.authentication.SessionAuthentication'],
+    'DEFAULT_RENDERER_CLASSES': ['rest_framework.renderers.JSONRenderer'],
+    'DEFAULT_PARSER_CLASSES': ['quiz.parsers.ObjectJSONParser'],
+    'DEFAULT_THROTTLE_RATES': {
+        'login': '10/hour',
+        'register': '3/hour',
+        'feedback': '5/hour',
+    },
+}
+NUM_PROXIES = config('NUM_PROXIES', default='0')
+if NUM_PROXIES:
+    REST_FRAMEWORK['NUM_PROXIES'] = int(NUM_PROXIES)
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
